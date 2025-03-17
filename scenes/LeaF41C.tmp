@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbdu6l7ul100o"]
+
+[ext_resource type="Script" path="res://scenes/LeaderboardScreen.gd" id="1_gjvm6"]
+[ext_resource type="Texture2D" uid="uid://b50uoaqsroxw7" path="res://assets/ui/Background_Yellow.png" id="1_l84sh"]
+[ext_resource type="Theme" uid="uid://cjjm667nobnen" path="res://assets/GameTheme.tres" id="2_i5ev8"]
+[ext_resource type="Script" path="res://ButtonEffects.gd" id="3_ptvrh"]
+[ext_resource type="FontFile" uid="uid://b5oqvbwyyrqum" path="res://assets/fonts/Capital_Hill.ttf" id="4_swfxg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be0mo"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cl3kw"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1omj"]
+bg_color = Color(0.397583, 0.774067, 0.994906, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_gcxq3"]
+resource_name = "FloatEffect"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(210, 63), Vector2(210, 68), Vector2(210, 63), Vector2(210, 68)]
+}
+
+[sub_resource type="Animation" id="Animation_i8ppe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, 63)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjrfn"]
+_data = {
+"FloatEffect": SubResource("Animation_gcxq3"),
+"RESET": SubResource("Animation_i8ppe")
+}
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gjvm6")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_l84sh")
+expand_mode = 1
+stretch_mode = 6
+flip_h = true
+
+[node name="ScoreContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 153.0
+offset_right = 785.0
+offset_bottom = 527.0
+
+[node name="ScoreList" type="VBoxContainer" parent="ScoreContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 81.0
+theme = ExtResource("2_i5ev8")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/icon_normal_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_be0mo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cl3kw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h1omj")
+text = "Menu"
+script = ExtResource("3_ptvrh")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 63.0
+offset_right = 953.0
+offset_bottom = 169.999
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/font_shadow_color = Color(0.360487, 0.76257, 0.993792, 1)
+theme_override_fonts/font = ExtResource("4_swfxg")
+theme_override_font_sizes/font_size = 70
+text = "LEADERBOARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_qjrfn")
+}
+autoplay = "FloatEffect"

@@ -1,0 +1,526 @@
+[gd_scene load_steps=56 format=3 uid="uid://7dklbjwxbggo"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_l6vlh"]
+[ext_resource type="Texture2D" uid="uid://qwc4c08rt0pp" path="res://assets/ui/Background_Blue.png" id="2_k8euf"]
+[ext_resource type="Texture2D" uid="uid://65jkac2v37cq" path="res://assets/dealer/cryingdealer.png" id="3_iqqfl"]
+[ext_resource type="Texture2D" uid="uid://bmbnew8nm1tny" path="res://assets/dealer/dancingdealer.png" id="4_2u5oo"]
+[ext_resource type="Texture2D" uid="uid://ix385di0n66s" path="res://assets/dealer/sleepingdealer.png" id="6_gvmw5"]
+[ext_resource type="Texture2D" uid="uid://cs3v12xddwsex" path="res://assets/icons/Money.png" id="6_pqga2"]
+[ext_resource type="Texture2D" uid="uid://0n1xndvg3uln" path="res://assets/dealer/sleepydealer.png" id="7_0o8tt"]
+[ext_resource type="Texture2D" uid="uid://bw8251yb8wxnq" path="res://assets/dealer/idledealer.png" id="7_vr3uh"]
+[ext_resource type="Texture2D" uid="uid://c4faw640pbv37" path="res://assets/icons/Hit.png" id="8_6sbdw"]
+[ext_resource type="Theme" uid="uid://cjjm667nobnen" path="res://assets/GameTheme.tres" id="8_u7hmq"]
+[ext_resource type="Texture2D" uid="uid://drj08yhn2ihte" path="res://assets/chips/PokerChipsPixel.png" id="9_mhfw6"]
+[ext_resource type="Texture2D" uid="uid://dltsaqwyck4gu" path="res://assets/icons/Stand.png" id="9_ph6xm"]
+[ext_resource type="Script" path="res://ButtonEffects.gd" id="10_psh0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw624"]
+atlas = ExtResource("9_mhfw6")
+region = Rect2(75.25, 0, 21.25, 19.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mw80"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52hju"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pa6d"]
+bg_color = Color(0.397583, 0.774067, 0.994906, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4j0n"]
+bg_color = Color(0.890196, 0.870588, 0.678431, 0.447059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0kbs"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7g5s"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.712963, 0.832548, 0.406332, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfsum"]
+bg_color = Color(0.397583, 0.774067, 0.994906, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wu2y"]
+atlas = ExtResource("3_iqqfl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1cnt"]
+atlas = ExtResource("3_iqqfl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pvbx"]
+atlas = ExtResource("3_iqqfl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2nsl"]
+atlas = ExtResource("3_iqqfl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfjk2"]
+atlas = ExtResource("4_2u5oo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqi4j"]
+atlas = ExtResource("4_2u5oo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkblf"]
+atlas = ExtResource("4_2u5oo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1phx"]
+atlas = ExtResource("4_2u5oo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4cb5"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odd4v"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1ymm"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyksv"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tdb4"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skjgo"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwlej"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqvpf"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj0x1"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvr0e"]
+atlas = ExtResource("7_vr3uh")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yf2c"]
+atlas = ExtResource("6_gvmw5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5qaf"]
+atlas = ExtResource("6_gvmw5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aweyj"]
+atlas = ExtResource("6_gvmw5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_168ai"]
+atlas = ExtResource("6_gvmw5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev3ow"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur1ug"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci7bi"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py01d"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnaht"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buegw"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx0a4"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jtg2"]
+atlas = ExtResource("7_0o8tt")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywhmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wu2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1cnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pvbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2nsl")
+}],
+"loop": true,
+"name": &"cry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfjk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqi4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkblf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1phx")
+}],
+"loop": true,
+"name": &"dance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4cb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odd4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1ymm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyksv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tdb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skjgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwlej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqvpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj0x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvr0e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yf2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5qaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aweyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_168ai")
+}],
+"loop": true,
+"name": &"sleeping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev3ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur1ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci7bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py01d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnaht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buegw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx0a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jtg2")
+}],
+"loop": true,
+"name": &"sleepy",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oc7g4"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15s67"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.712963, 0.832548, 0.406332, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_en8q2"]
+bg_color = Color(0.397583, 0.774067, 0.994906, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_l6vlh")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1921.0
+offset_bottom = 1083.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_k8euf")
+expand_mode = 1
+stretch_mode = 6
+flip_h = true
+
+[node name="PlayerNicknameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 24.0
+offset_right = 637.0
+offset_bottom = 81.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_font_sizes/font_size = 45
+text = " [Nickname]"
+
+[node name="PlayerBalanceLabel" type="Label" parent="."]
+offset_left = 101.0
+offset_top = 87.0
+offset_right = 549.0
+offset_bottom = 227.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_font_sizes/font_size = 42
+text = "Balance: $500"
+
+[node name="PlayerChipIcon" type="TextureRect" parent="PlayerBalanceLabel"]
+layout_mode = 0
+offset_left = -102.0
+offset_top = -17.0
+offset_right = -9.0
+offset_bottom = 59.0
+texture = SubResource("AtlasTexture_jw624")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 985.0
+offset_top = 10.0
+offset_right = 1131.0
+offset_bottom = 65.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/icon_normal_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_4mw80")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_52hju")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5pa6d")
+text = "Exit"
+script = ExtResource("10_psh0r")
+
+[node name="BetInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 133.0
+offset_right = 467.0
+offset_bottom = 192.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_placeholder_color = Color(0.0633693, 0.625292, 0.877704, 1)
+theme_override_colors/font_color = Color(0.0633693, 0.625292, 0.877704, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4j0n")
+placeholder_text = "   Place your bet..."
+
+[node name="PlaceBetButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 129.0
+offset_right = 568.0
+offset_bottom = 220.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.0633693, 0.625292, 0.877704, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/hover = SubResource("StyleBoxFlat_i0kbs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f7g5s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfsum")
+icon = ExtResource("6_pqga2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DealerSprite" type="AnimatedSprite2D" parent="."]
+z_index = 10
+position = Vector2(882, 531)
+scale = Vector2(7.5, 7.5)
+sprite_frames = SubResource("SpriteFrames_ywhmk")
+animation = &"idle"
+frame_progress = 0.613751
+
+[node name="HitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 482.0
+offset_right = 218.0
+offset_bottom = 549.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.888287, 0.423261, 0.678563, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc7g4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15s67")
+theme_override_styles/normal = SubResource("StyleBoxFlat_en8q2")
+disabled = true
+text = "HIT"
+icon = ExtResource("8_6sbdw")
+expand_icon = true
+
+[node name="StandButton" type="Button" parent="."]
+offset_left = 267.0
+offset_top = 483.0
+offset_right = 435.0
+offset_bottom = 550.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.888287, 0.423261, 0.678563, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc7g4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15s67")
+theme_override_styles/normal = SubResource("StyleBoxFlat_en8q2")
+disabled = true
+text = "stand"
+icon = ExtResource("9_ph6xm")
+icon_alignment = 2
+expand_icon = true
+
+[node name="BetAgainButton" type="Button" parent="."]
+visible = false
+offset_left = 131.0
+offset_top = 583.0
+offset_right = 307.0
+offset_bottom = 642.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.888287, 0.423261, 0.678563, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_oc7g4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_15s67")
+theme_override_styles/normal = SubResource("StyleBoxFlat_en8q2")
+text = "BET AGAIN"
+
+[node name="PlayerHandTotal" type="Label" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 410.0
+offset_right = 450.0
+offset_bottom = 460.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.888287, 0.423261, 0.678563, 1)
+theme_override_font_sizes/font_size = 39
+text = "Player Total: 0"
+
+[node name="DealerHandTotal" type="Label" parent="."]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 410.0
+offset_right = 1025.0
+offset_bottom = 478.0
+theme = ExtResource("8_u7hmq")
+theme_override_colors/font_color = Color(0.888287, 0.423261, 0.678563, 1)
+theme_override_font_sizes/font_size = 39
+text = "Dealer Total: 0"
+
+[node name="PlayerCardsContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 110.0
+offset_bottom = 210.0
+alignment = 1
+
+[node name="DealerCardsContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 200.0
+offset_right = 610.0
+offset_bottom = 210.0
+alignment = 1

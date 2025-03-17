@@ -1,0 +1,281 @@
+[gd_scene load_steps=23 format=3 uid="uid://338c1k0u2pm3"]
+
+[ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_8c25i"]
+[ext_resource type="Texture2D" uid="uid://d3r31cm6m5wr1" path="res://assets/ui/Background_pink.png" id="1_pfbaf"]
+[ext_resource type="FontFile" uid="uid://b5oqvbwyyrqum" path="res://assets/fonts/Capital_Hill.ttf" id="2_fg5x3"]
+[ext_resource type="Theme" uid="uid://cjjm667nobnen" path="res://assets/GameTheme.tres" id="3_hdo2h"]
+[ext_resource type="Texture2D" uid="uid://1rmecdhvoepu" path="res://assets/ui/Coin.png" id="4_j61px"]
+[ext_resource type="Script" path="res://ButtonEffects.gd" id="5_dpawg"]
+[ext_resource type="Texture2D" uid="uid://dp4xakq0hniv5" path="res://assets/ui/Star.png" id="6_i7qww"]
+[ext_resource type="Texture2D" uid="uid://bhhcb0nhsqvjd" path="res://assets/ui/Heart.png" id="7_xe23r"]
+[ext_resource type="PackedScene" uid="uid://1k1i1q45kp71" path="res://scenes/ScreenTransition.tscn" id="9_bg5iq"]
+
+[sub_resource type="Animation" id="Animation_gcxq3"]
+resource_name = "FloatEffect"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(210, 63), Vector2(210, 68), Vector2(210, 63), Vector2(210, 68)]
+}
+
+[sub_resource type="Animation" id="Animation_i8ppe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(210, 63)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjrfn"]
+_data = {
+"FloatEffect": SubResource("Animation_gcxq3"),
+"RESET": SubResource("Animation_i8ppe")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu82h"]
+bg_color = Color(0.360784, 0.760784, 0.992157, 0.729412)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljckl"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnf8l"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.712963, 0.832548, 0.406332, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c74uy"]
+bg_color = Color(0.397583, 0.774067, 0.994906, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qojf2"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ff2w"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.712963, 0.832548, 0.406332, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc24t"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5wty"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pdki"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtv78"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.712963, 0.832548, 0.406332, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8c25i")
+
+[node name="ScreenTransition" parent="." instance=ExtResource("9_bg5iq")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_pfbaf")
+expand_mode = 1
+stretch_mode = 6
+flip_h = true
+
+[node name="GlowLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 63.0
+offset_right = 1006.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(1, 1, 0.6, 0.596078)
+theme_override_fonts/font = ExtResource("2_fg5x3")
+theme_override_font_sizes/font_size = 71
+text = "Kitty BlackJack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GlowLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_qjrfn")
+}
+autoplay = "FloatEffect"
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 63.0
+offset_right = 1006.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/font_shadow_color = Color(0.360487, 0.76257, 0.993792, 1)
+theme_override_fonts/font = ExtResource("2_fg5x3")
+theme_override_font_sizes/font_size = 70
+text = "Kitty BlackJack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_qjrfn")
+}
+autoplay = "FloatEffect"
+
+[node name="NicknameInput" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 152.0
+offset_right = 769.0
+offset_bottom = 204.0
+theme = ExtResource("3_hdo2h")
+theme_override_colors/font_color = Color(0.900195, 0.621987, 0.736535, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iu82h")
+placeholder_text = "Enter your nickname ..."
+caret_blink = true
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 278.0
+offset_right = 707.0
+offset_bottom = 354.0
+theme = ExtResource("3_hdo2h")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_ljckl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hnf8l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c74uy")
+text = "START GAME"
+icon = ExtResource("4_j61px")
+autowrap_mode = 2
+expand_icon = true
+script = ExtResource("5_dpawg")
+
+[node name="LeaderboardButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 364.0
+offset_right = 708.0
+offset_bottom = 439.0
+theme = ExtResource("3_hdo2h")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_qojf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7ff2w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c74uy")
+text = "Leaderboard
+"
+icon = ExtResource("6_i7qww")
+expand_icon = true
+script = ExtResource("5_dpawg")
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 583.0
+offset_right = 124.0
+offset_bottom = 638.0
+theme = ExtResource("3_hdo2h")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/icon_normal_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_dc24t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n5wty")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c74uy")
+text = "Exit"
+script = ExtResource("5_dpawg")
+
+[node name="HelpButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 452.0
+offset_right = 703.0
+offset_bottom = 515.0
+theme = ExtResource("3_hdo2h")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_styles/hover = SubResource("StyleBoxFlat_6pdki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mtv78")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c74uy")
+text = "HELP
+"
+icon = ExtResource("7_xe23r")
+autowrap_mode = 3
+expand_icon = true
+script = ExtResource("5_dpawg")
+
+[node name="ErrorMessage" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 290.0
+offset_top = 213.0
+offset_right = 850.0
+offset_bottom = 270.0
+theme = ExtResource("3_hdo2h")
+theme_override_colors/font_color = Color(0.839216, 0, 0, 1)

@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://ith6bdoapt26"]
+
+[ext_resource type="Script" path="res://scenes/Help.gd" id="1_tpn8r"]
+[ext_resource type="Texture2D" uid="uid://b50uoaqsroxw7" path="res://assets/ui/Background_Yellow.png" id="1_w31ov"]
+[ext_resource type="FontFile" uid="uid://b5oqvbwyyrqum" path="res://assets/fonts/Capital_Hill.ttf" id="2_xqtcb"]
+[ext_resource type="Theme" uid="uid://cjjm667nobnen" path="res://assets/GameTheme.tres" id="3_2yoiy"]
+[ext_resource type="Texture2D" uid="uid://bp1s1w3n4r3dn" path="res://assets/ui/MenuSquare.png" id="3_ap8h7"]
+[ext_resource type="Script" path="res://ButtonEffects.gd" id="4_2moeh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lstn"]
+bg_color = Color(0.552036, 0.826463, 0.997664, 1)
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6mhb"]
+bg_color = Color(0.0633693, 0.625292, 0.877704, 1)
+border_color = Color(0.838181, 0.898794, 0.585433, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwu63"]
+bg_color = Color(0.397583, 0.774067, 0.994906, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.890196, 0.870588, 0.678431, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tpn8r")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2133.0
+offset_bottom = 1200.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_w31ov")
+expand_mode = 1
+stretch_mode = 6
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 158.0
+offset_top = 94.0
+offset_right = 1125.0
+offset_bottom = 704.0
+texture = ExtResource("3_ap8h7")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 195.0
+offset_top = 28.0
+offset_right = 1048.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/font_shadow_color = Color(0.360487, 0.76257, 0.993792, 1)
+theme_override_fonts/font = ExtResource("2_xqtcb")
+theme_override_font_sizes/font_size = 70
+text = "RULES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 38.175
+offset_right = 150.0
+offset_bottom = 108.175
+scale = Vector2(1.02157, 0.756479)
+theme = ExtResource("3_2yoiy")
+theme_override_colors/font_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_colors/icon_normal_color = Color(0.913331, 0.50543, 0.721748, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_5lstn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i6mhb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uwu63")
+text = "Menu"
+script = ExtResource("4_2moeh")
+
+[node name="RulesContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 143.0
+offset_right = 1064.0
+offset_bottom = 734.0
