@@ -1,7 +1,7 @@
 # Blackjack Game
 
 ## Overview
-This is a **passion project** and a **work in progress**—a Blackjack game built using **Godot Engine**. The goal is to create an engaging, well-polished card game with animations, strategic gameplay, and a leaderboard system. The game is currently **deployed on Itch.io**, allowing players to try it out while development continues.
+This is a **passion project** and a **work in progress**—a Blackjack game I built using **Godot Engine**. The goal is to create an engaging, well-polished card game with animations, strategic gameplay, and a leaderboard system. The game is currently **deployed on Itch.io**, allowing players to try it out while development continues.
 
 ## Features (So Far)
 - **Fully functional Blackjack mechanics**
@@ -55,5 +55,5 @@ Sound Effects: "Button Sound Effect" by freesoundeffects from Pixabay
 - **[Play on Itch.io](https://yourgame.itch.io/blackjack)**
 
 ---
-🔨 **Built with Godot Engine | Passion Project in Progress** 🚀
+ **Built with Godot Engine | Passion Project in Progress** 
 
